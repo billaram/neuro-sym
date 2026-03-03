@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Benchmarks (keep structure, ignore large result files)
+benchmarks/results/*.csv
+benchmarks/results/*.json
+!benchmarks/results/.gitkeep
+
+# Environment
+.env
+.env.local
+
+# Models (don't commit large model files)
+models/
+*.bin
+*.pt
+*.onnx

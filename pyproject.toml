@@ -1,0 +1,40 @@
+[project]
+name = "neuro-sym"
+version = "0.1.0"
+description = "A neuro-symbolic AI system combining neural parsing with symbolic reasoning"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Ramkumar Mohan" },
+]
+
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+neural = [
+    "torch>=2.0",
+    "transformers>=4.30",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+    "black>=24.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
