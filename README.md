@@ -42,9 +42,37 @@ uv run pytest
 uv run python examples/rollout_decision.py
 ```
 
+## "Isn't This Just Agentic AI?"
+
+No. Agents and neuro-symbolic systems look similar on the surface (LLM + tools), but
+they differ in **who controls the reasoning**.
+
+| Dimension        | Agentic AI              | Neuro-Symbolic (this project)  |
+|------------------|-------------------------|--------------------------------|
+| Who reasons      | The LLM                 | The symbolic engine            |
+| LLM role         | Orchestrator + reasoner | Parser / translator only       |
+| Determinism      | No — probabilistic      | Yes — same input, same output  |
+| Explainability   | Post-hoc rationalization| Actual computation trace       |
+| LLM calls/decision | 3-5+                 | 0-1                           |
+| Reasoning latency| Seconds                 | < 1ms (CPU)                    |
+| Best for         | Open-ended, creative    | Rule-based, auditable decisions|
+
+**Agents** are best when the reasoning itself is the hard part and you need a system
+that can improvise. **Neuro-symbolic** is best when rules are known and decisions
+must be deterministic, auditable, and fast.
+
+Full analysis: [docs/neuro_symbolic_vs_agentic.md](docs/neuro_symbolic_vs_agentic.md)
+
 ## 4-Week Plan
 
 See [PLAN.md](PLAN.md) for the detailed implementation timeline.
+
+## Playground
+
+6 toy applications that demonstrate neuro-symbolic patterns mapped to real-world
+domains (finance, healthcare, compliance, and more).
+
+See [docs/PRD_PLAYGROUND.md](docs/PRD_PLAYGROUND.md) for the full PRD.
 
 ## Core Insight
 
