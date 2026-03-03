@@ -106,12 +106,44 @@ neuro-sym/
 │   ├── sample_inputs.json          # Example text inputs
 │   └── sample_outputs.json         # Expected DSL + decision outputs
 │
+├── playground/                     # Toy neuro-symbolic applications
+│   ├── __init__.py
+│   ├── rollout_advisor.py          # Toy 1: Feature rollout go/no-go
+│   ├── loan_engine.py              # Toy 2: Loan eligibility decisions
+│   ├── triage.py                   # Toy 3: Medical symptom triage
+│   ├── compliance.py               # Toy 4: AML policy compliance
+│   ├── recipe.py                   # Toy 5: Recipe substitution advisor
+│   ├── puzzle.py                   # Toy 6: Logic grid puzzle solver
+│   └── common/                     # Shared playground utilities
+│       ├── __init__.py
+│       ├── cli.py                  # CLI formatting & colors
+│       └── runner.py               # Pipeline invocation wrapper
+│
 ├── configs/                        # Configuration files
 │   ├── dsl_schema.yaml             # DSL schema definition
 │   ├── rules.yaml                  # Rule definitions for executor
-│   └── pipeline.yaml               # Pipeline runtime config
+│   ├── pipeline.yaml               # Pipeline runtime config
+│   └── toys/                       # Per-toy configuration
+│       ├── rollout_advisor.yaml
+│       ├── loan_engine.yaml
+│       ├── triage.yaml
+│       ├── compliance.yaml
+│       ├── recipe.yaml
+│       └── puzzle.yaml
+│
+├── docs/                           # (also includes)
+│   └── playground/                 # Toy app documentation
+│       ├── overview.md             # Playground explained
+│       ├── toy1_rollout_advisor.md # Deep dive + real-world mapping
+│       ├── toy2_loan_engine.md
+│       ├── toy3_triage.md
+│       ├── toy4_compliance.md
+│       ├── toy5_recipe.md
+│       ├── toy6_puzzle.md
+│       └── real_world_patterns.md  # Cross-cutting pattern analysis
 │
 ├── PLAN.md                         # 4-week implementation plan (detailed)
+├── PRD_PLAYGROUND.md → docs/PRD_PLAYGROUND.md
 ├── PROJECT_STRUCTURE.md            # This file
 ├── README.md                       # Project overview & setup instructions
 ├── pyproject.toml                  # Python project config
@@ -132,4 +164,6 @@ neuro-sym/
 | `benchmarks/`   | CPU performance measurement scripts & results     | Week 3-4   |
 | `tests/`        | Unit, integration, and end-to-end tests           | All weeks  |
 | `examples/`     | Runnable demos and sample I/O                     | Week 2+    |
-| `configs/`      | YAML configs for DSL, rules, pipeline             | Week 2+    |
+| `playground/`   | 6 toy apps demonstrating neuro-symbolic patterns  | Week 2-4   |
+| `configs/`      | YAML configs for DSL, rules, pipeline, toys       | Week 2+    |
+| `docs/playground/` | Per-toy docs with real-world application mapping | Week 2-4  |
